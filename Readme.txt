@@ -5,7 +5,7 @@ Proggy only needs thunks to work, also sometimes, when dumping,
 Import table and API names are destroyed.
 
 This tool is used to rebuild a valid import table
-which can be insert in section already present
+which can be inserted in section already present
 or (by default) in a new appended section.
 
 All you need, is to know thunk's array RVA offset.
