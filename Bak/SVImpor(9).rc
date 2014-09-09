@@ -1,0 +1,115 @@
+#define MAINICON						1
+#define LOCKBMP							7
+MAINICON				ICON   DISCARDABLE Res\MAINICON.ICO
+LOCKBMP					BITMAP DISCARDABLE Res\LOCK.BMP
+#define IDC_STATIC                                      -1
+#define SVDialog 101
+#define IDC_REFRESH                                     3000
+#define IDC_EXIT                                        3001
+#define IDC_MODULE                                      3002
+#define IDC_RVA                                         3003
+#define IDC_API                                         3004
+#define IDC_ADDRESS                                     3005
+#define IDC_VIEW                                        3006
+#define IDC_SEARCH                                      3007
+#define IDC_NEXT                                        3008
+#define IDC_GO                                          3009
+#define IDC_RELOC                                       3010
+#define IDC_LISTAPI                                     3011
+#define IDC_START                                       3012
+#define IDC_END                                         3013
+#define IDC_SAVE                                        3014
+#define IDC_LISTPLUG                                    3015
+#define IDC_PLUG                                        3016
+#define IDC_LISTERROR                                   3017
+#define IDC_UPDATE                                      3018
+#define IDC_SAFE                                        3019
+#define IDC_PROGRESS                                    3020
+#define IDC_SAFEAPI                                     3021
+#define IDC_RSRC                                        3022
+#define IDC_DISASM                                      3023
+#define IDC_LISTDISASM                                  3024
+#define IDC_NBDISASM                                    3025
+#define IDC_TXT                                         3026
+#define IDC_PEBASE                                      3027
+
+
+#define CONTROL_PANEL_RESOURCE_ID                       123 
+#define RT_MANIFEST                                     24 
+
+#define IDD_DIALOG                                      102
+#define IDC_RS_OPEN                                     3100
+#define IDC_RS_EXIT                                     3101
+#define IDC_RS_CREXE                                    3105
+#define IDC_RS_LSNAME                                   3106
+#define IDC_RS_LSSIZE                                   3107
+#define IDC_RS_EIP                                      3108
+#define IDC_RS_RSRC                                     3109
+#define IDC_RS_TREE                                     3110
+#define IDC_RS_CREATE                                   3111
+#define IDC_RS_RO                                       3112
+#define IDC_RS_NOTE                                     3113
+#define IDC_RS_STATIC                                   -1
+
+#define IDD_TEXTD                                       103
+#define IDC_EDITTEXTAPI                                 3200
+
+#include "resource.h"
+#include <Res\SVImporDlg.rc>
+#include <Res\dumpDlg.rc>
+#include <Res\rsrcbuilderDlg.rc>
+#include <Res\apilistDlg.rc>
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "SVimport.dll.manifest" 
+
+IDD_DIALOG DIALOGEX DISCARDABLE  0, 0, 214, 189
+STYLE 0x0004 | DS_CENTER | WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU | WS_VISIBLE | WS_OVERLAPPED | DS_MODALFRAME | DS_3DLOOK
+CAPTION "Resource Browser & Rebuilder v1.0 @SV "
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Read",IDC_RS_OPEN,5,171,50,14,BS_FLAT
+    PUSHBUTTON      "Quit",IDC_RS_EXIT,159,171,50,14,BS_FLAT
+    GROUPBOX        "File Info",IDC_RS_STATIC,2,0,212,25
+    EDITTEXT        IDC_RS_RSRC,48,9,34,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Resource",IDC_RS_STATIC,14,11,32,8
+    GROUPBOX        "",IDC_RS_STATIC,1,165,212,22
+    GROUPBOX        "",IDC_RS_STATIC,1,24,212,18
+    CONTROL         "Tree1",IDC_RS_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,4,45,208,122
+    PUSHBUTTON      "Rebuild @",IDC_RS_CREATE,59,171,50,14,BS_FLAT | WS_DISABLED
+    EDITTEXT        IDC_RS_RO,157,9,34,12,ES_AUTOHSCROLL
+    LTEXT           "Rebuild Offset",IDC_RS_STATIC,108,11,48,8
+    EDITTEXT        IDC_RS_NOTE,10,31,191,10,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+END
+
+IDD_TEXTD DIALOG DISCARDABLE  0, 0, 311, 228
+STYLE 0x0004 | DS_CENTER | WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU | WS_VISIBLE | WS_OVERLAPPED | DS_MODALFRAME | DS_3DLOOK
+CAPTION "API List"
+FONT 8, "Lucida Console"
+BEGIN
+    DEFPUSHBUTTON   "Save",IDOK,93,211,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,168,211,50,14
+    EDITTEXT        IDC_EDITTEXTAPI,2,3,306,204,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+    GROUPBOX        "",IDC_STATIC,2,204,306,23
+END
+
+#define SVImporTable 1
+SVImporTable VERSIONINFO
+FILEVERSION 2,0,3,0
+PRODUCTVERSION 2,0,3,0
+FILEOS 0x00000004
+FILETYPE 0x00000000
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "FileVersion", "1.0.0\0"
+      VALUE "ProductVersion", "1.0.0\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04B0
+  END
+END

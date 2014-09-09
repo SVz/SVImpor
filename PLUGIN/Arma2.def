@@ -1,0 +1,2 @@
+LIBRARY Arma2
+EXPORTS process_add

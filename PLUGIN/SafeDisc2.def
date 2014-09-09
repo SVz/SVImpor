@@ -1,0 +1,2 @@
+LIBRARY Safedisc2
+EXPORTS process_add

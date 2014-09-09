@@ -1,0 +1,2 @@
+LIBRARY petite
+EXPORTS process_add

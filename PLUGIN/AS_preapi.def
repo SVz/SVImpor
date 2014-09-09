@@ -1,0 +1,2 @@
+LIBRARY AS_preapi
+EXPORTS process_add

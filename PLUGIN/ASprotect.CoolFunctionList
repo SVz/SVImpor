@@ -1,0 +1,8 @@
+*VERSION:2,00
+*FILE:D:\Masm32-files\sv\IAT_rebuilder\plugin\ASprotect.dll
+*TIME:4/24/2001 10:54:14
+*import:^
+*syscall:&
+^IsBadCodePtr                                    0  10002000
+process_add                                      0  1000100C
+IsBadCodePtr&                                    0  10001458

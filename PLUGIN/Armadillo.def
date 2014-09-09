@@ -1,0 +1,2 @@
+LIBRARY Armadillo
+EXPORTS process_add

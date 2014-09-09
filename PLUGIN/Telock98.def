@@ -1,0 +1,2 @@
+LIBRARY telock98
+EXPORTS process_add

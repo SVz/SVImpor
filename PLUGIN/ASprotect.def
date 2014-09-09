@@ -1,0 +1,2 @@
+LIBRARY ASprotect
+EXPORTS process_add

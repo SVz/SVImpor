@@ -1,0 +1,87 @@
+#define MAINICON						1
+#define LOCKBMP							7
+MAINICON				ICON   DISCARDABLE Res\MAINICON.ICO
+LOCKBMP					BITMAP DISCARDABLE Res\LOCK.BMP
+#define IDC_STATIC                                      -1
+#define SVDialog 101
+#define IDC_REFRESH                                     3000
+#define IDC_EXIT                                        3001
+#define IDC_MODULE                                      3002
+#define IDC_RVA                                         3003
+#define IDC_API                                         3004
+#define IDC_ADDRESS                                     3005
+#define IDC_VIEW                                        3006
+#define IDC_SEARCH                                      3007
+#define IDC_NEXT                                        3008
+#define IDC_GO                                          3009
+#define IDC_RELOC                                       3010
+#define IDC_LISTAPI                                     3011
+#define IDC_START                                       3012
+#define IDC_END                                         3013
+#define IDC_SAVE                                        3014
+#define IDC_LISTPLUG                                    3015
+#define IDC_PLUG                                        3016
+#define IDC_LISTERROR                                   3017
+#define IDC_UPDATE                                      3018
+#define IDC_SAFE                                        3019
+#define IDC_PROGRESS                                    3020
+#define IDC_SAFEAPI                                     3021
+#define IDC_RSRC                                        3022
+#define IDC_DISASM                                      3023
+#define IDC_LISTDISASM                                  3024
+#define IDC_NBDISASM                                    3025
+#define IDC_TXT                                         3026
+#define IDC_PEBASE                                      3027
+
+
+#define CONTROL_PANEL_RESOURCE_ID                       123 
+#define RT_MANIFEST                                     24 
+
+#define IDD_DIALOG                                      102
+#define IDC_RS_OPEN                                     3100
+#define IDC_RS_EXIT                                     3101
+#define IDC_RS_CREXE                                    3105
+#define IDC_RS_LSNAME                                   3106
+#define IDC_RS_LSSIZE                                   3107
+#define IDC_RS_EIP                                      3108
+#define IDC_RS_RSRC                                     3109
+#define IDC_RS_TREE                                     3110
+#define IDC_RS_CREATE                                   3111
+#define IDC_RS_RO                                       3112
+#define IDC_RS_NOTE                                     3113
+#define IDC_RS_STATIC                                   -1
+
+#define IDD_TEXTD                                       103
+#define IDC_EDITTEXTAPI                                 3200
+
+#include "resource.h"
+#include <Res\SVImporDlg.rc>
+#include <Res\dumpDlg.rc>
+#include <Res\rsrcbuilderDlg.rc>
+#include <Res\apilistDlg.rc>
+#include <Res\PelockDlg.rc>
+#include <Res\FixerDlg.rc>
+#include <Res\videDlg.rc>
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "SVimport.dll.manifest" 
+
+#define SVTools 1
+SVTools VERSIONINFO
+FILEVERSION 2,3,0,0
+PRODUCTVERSION 2,3,0,0
+FILEOS 0x00000004
+FILETYPE 0x00000000
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "FileVersion", "1.0.0\0"
+      VALUE "ProductVersion", "1.0.0\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04B0
+  END
+END

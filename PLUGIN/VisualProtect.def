@@ -1,0 +1,2 @@
+LIBRARY VisualProtect
+EXPORTS process_add

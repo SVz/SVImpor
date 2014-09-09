@@ -1,0 +1,2 @@
+LIBRARY Core
+EXPORTS process_add

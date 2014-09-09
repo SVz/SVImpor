@@ -1,0 +1,2 @@
+LIBRARY AS_new
+EXPORTS process_add

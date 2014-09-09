@@ -1,0 +1,94 @@
+ _BW_ Dump  Version 1.0 Copyright (c) 1996, 1997 Bigware International
+Display of File D:\Masm32-files\sv\IAT_rebuilder\plugin\ASprotect.dll
+
+Old Executable Header
+
+DOS File Size                                       1000h  (  4096. )
+Load Image Size                                      450h  (  1104. )
+Relocation Table entry count                        0000h  (     0. )
+Relocation Table address                            0040h  (    64. )
+Size of header record      (in paragraphs)          0004h  (     4. )
+Minimum Memory Requirement (in paragraphs)          0000h  (     0. )
+Maximum Memory Requirement (in paragraphs)          FFFFh  ( 65535. )
+File load checksum                                  0000h  (     0. )
+Overlay Number                                      0000h  (     0. )
+
+Initial Stack Segment  (SS:SP)                         0000:00B8
+Program Entry Point    (CS:IP)                         0000:0000
+
+
+Portable Executable (PE) File
+
+Header base: 000000C8
+
+CPU type                 80386
+Flags                    210E [ executable backwards 32bit library ]
+DLL flags                0000 [ ]
+Linker Version           5.C
+Time stamp               3AE53F36
+O/S Version              4.0
+User Version             0.0
+Subsystem Version        4.0
+Subsystem                0002 [ Windows GUI ]
+Object count             00000004
+Symbols offset           00000000
+Symbols count            00000000
+Optional header size     00E0
+Magic #                  10B
+Code size                00000600
+Init Data size           00000E00
+Uninit Data size         00000000
+Entry RVA                00001000
+Image base               10000000
+Code base                00001000
+Data base                00002000
+Object/File align        00001000/00000200
+Image size               00005000
+Header size              00000400
+Checksum                 00000000
+Stack reserve/commit     00100000/00001000
+Heap reserve/commit      00100000/00001000
+Number interesting RVAs  00000010
+Name                   RVA       Size
+------------------  --------  --------
+Exports             00002060  0000004C
+Imports             00002008  00000028
+Resources           00000000  00000000
+Exceptions          00000000  00000000
+Security            00000000  00000000
+Fixups              00004000  00000038
+Debug               00000000  00000000
+Description         00000000  00000000
+TLS                 00000000  00000000
+Callbacks           00000000  00000000
+reserved            00000000  00000000
+reserved            00000000  00000000
+reserved            00000000  00000000
+reserved            00000000  00000000
+reserved            00000000  00000000
+
+Object table:
+#   Name      VirtSize    RVA     PhysSize  Phys off  Flags
+--  --------  --------  --------  --------  --------  --------
+ 1  .text     0000045E  00001000  00000600  00000400  60000020 [CER]
+ 2  .rdata    000000AC  00002000  00000200  00000A00  40000040 [IR]
+ 3  .data     0000080C  00003000  00000200  00000C00  C0000040 [IRW]
+ 4  .reloc    0000004C  00004000  00000200  00000E00  42000040 [IDR]
+
+Key to section flags:
+  C - contains code
+  D - discardable
+  E - executable
+  I - contains initialized data
+  R - readable
+  W - writeable
+
+Imports from KERNEL32.dll
+    IsBadCodePtr(hint = 0199)
+
+Exports from ASprotect.dll
+  1 exported name(s), 1 export addresse(s).  Ordinal base is 1.
+    Ordinal RVA       Name
+    ------- --------  ----
+       0    0000100C  process_add
+
