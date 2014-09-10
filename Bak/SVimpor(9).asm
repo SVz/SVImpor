@@ -805,6 +805,25 @@ WndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
                 invoke SendMessage,hWnd,WM_COMMAND,IDC_VIEW,BN_CLICKED
             .ENDIF
         .ENDIF
+       .IF eax==IDC_LISTERROR
+            .IF ecx==NM_CLICK
+                mov nbitem,0
+                push hWnd
+                pop hwnd
+                add ebx,4
+                mov eax,[ebx]
+                mov pitem.iItem,eax
+                mov pitem.iSubItem,0            ; column 0 of list (adresse)
+                mov pitem.imask,LVIF_TEXT
+                mov pitem.cchTextMax,500
+                lea eax,textbuffer
+                mov pitem.pszText,eax
+                invoke GetDlgItem,hwnd,IDC_LISTERROR
+                invoke SendMessage,eax,LVM_GETITEM,0,offset pitem 
+                invoke SetDlgItemText,hWnd,IDC_RVA,addr textbuffer
+                invoke SendMessage,hWnd,WM_COMMAND,IDC_VIEW,BN_CLICKED
+            .ENDIF
+       .ENDIF
     .ENDIF
     invoke DefWindowProc,hWnd,uMsg,wParam,lParam
     ret

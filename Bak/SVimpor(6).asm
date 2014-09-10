@@ -227,6 +227,7 @@ WinMain endp
 ;------------------------------------------------------------------------------
 WndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
     LOCAL seh:SEH
+    LOCAL index:DWORD
     .IF uMsg==WM_DESTROY
         invoke PostQuitMessage,NULL
     .ELSEIF uMsg==WM_RBUTTONDOWN
@@ -813,8 +814,8 @@ WndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
 		        invoke SendMessage,eax,LB_GETCURSEL,0,0
 		        mov index,eax
 		        invoke GetDlgItem,hwnd,IDC_LISTERROR
-		        invoke SendMessage,eax,LB_GETTEXT,index,offset buffer
-                invoke SetDlgItemText,hWnd,IDC_RVA,addr buffer
+		        invoke SendMessage,eax,LB_GETTEXT,index,addr textbuffer
+                invoke SetDlgItemText,hWnd,IDC_RVA,addr textbuffer
                 invoke SendMessage,hWnd,WM_COMMAND,IDC_VIEW,BN_CLICKED
             .ENDIF
        .ENDIF

@@ -227,7 +227,6 @@ WinMain endp
 ;------------------------------------------------------------------------------
 WndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
     LOCAL seh:SEH
-    LOCAL index:DWORD
     .IF uMsg==WM_DESTROY
         invoke PostQuitMessage,NULL
     .ELSEIF uMsg==WM_RBUTTONDOWN
@@ -764,15 +763,12 @@ WndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
                 invoke DialogBoxParam, dllhandle, IDD_DIALOG, NULL, addr DlgProc, NULL
             .ELSEIF ax==IDC_DUMP
                 invoke DialogBoxParam, dllhandle, IDD_DLGDUMP, NULL, addr DlgDumpProc, NULL
-            .ELSEIF ax==IDC_LISTERROR
-            invoke MessageBox,NULL,addr message_ntdll,addr AppName,MB_OK
-            .ENDIF
+             .ENDIF
         .ELSEIF dx==LBN_SELCHANGE ;DBLCLK
             .IF ax==IDC_LISTPLUG
                 invoke GetDlgItem,hWnd,IDC_PLUG
                 invoke SendMessage,eax,BM_SETCHECK,BST_CHECKED,0
             .ELSEIF ax==IDC_LISTERROR
-            invoke MessageBox,NULL,addr message_ntdll,addr AppName,MB_OK
                 invoke GetDlgItem,hWnd,IDC_LISTERROR
                 invoke SendMessage,eax,LB_GETCURSEL,0,0
                 mov index_err,eax
@@ -809,19 +805,6 @@ WndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
                 invoke SendMessage,hWnd,WM_COMMAND,IDC_VIEW,BN_CLICKED
             .ENDIF
         .ENDIF
-       .IF eax==IDC_LISTERROR
-            .IF ecx==NM_CLICK
-                push hWnd
-                pop hwnd
-		        invoke GetDlgItem,hwnd,IDC_LISTERROR
-		        invoke SendMessage,eax,LB_GETCURSEL,0,0
-		        mov index,eax
-		        invoke GetDlgItem,hwnd,IDC_LISTERROR
-		        invoke SendMessage,eax,LB_GETTEXT,index,addr textbuffer
-                invoke SetDlgItemText,hWnd,IDC_RVA,addr textbuffer
-                invoke SendMessage,hWnd,WM_COMMAND,IDC_VIEW,BN_CLICKED
-            .ENDIF
-       .ENDIF
     .ENDIF
     invoke DefWindowProc,hWnd,uMsg,wParam,lParam
     ret

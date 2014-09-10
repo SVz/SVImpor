@@ -227,7 +227,6 @@ WinMain endp
 ;------------------------------------------------------------------------------
 WndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
     LOCAL seh:SEH
-    LOCAL index:DWORD
     .IF uMsg==WM_DESTROY
         invoke PostQuitMessage,NULL
     .ELSEIF uMsg==WM_RBUTTONDOWN
@@ -1524,7 +1523,7 @@ fin_calcul:
             invoke GlobalFree,hMemory
         .endif
         
-        invoke GlobalAlloc,GMEM_MOVEABLE or GMEM_ZEROINIT,10000h
+        invoke GlobalAlloc,GMEM_MOVEABLE or GMEM_ZEROINIT,80000h
         mov  hMemory,eax
         invoke GlobalLock,hMemory
         mov  pMemory,eax

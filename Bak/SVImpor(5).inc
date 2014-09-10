@@ -27,7 +27,6 @@ include \masm32\include\advapi32.inc
 include \masm32\include\ComCtl32.inc
 include \masm32\include\Shell32.inc
 include \masm32\include\Ole32.inc
-include \masm32\macros\macros.asm
 
 includelib \masm32\lib\user32.lib
 includelib \masm32\lib\kernel32.lib
@@ -68,6 +67,10 @@ ENDM
     ; --------------------------------
       CTXT MACRO quoted_text:VARARG
         EXITM <offset literal(quoted_text)>
+      ENDM
+      len MACRO lpString
+        invoke szLen,reparg(lpString)
+        EXITM <eax>
       ENDM
 
 .const

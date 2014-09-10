@@ -764,12 +764,15 @@ WndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
                 invoke DialogBoxParam, dllhandle, IDD_DIALOG, NULL, addr DlgProc, NULL
             .ELSEIF ax==IDC_DUMP
                 invoke DialogBoxParam, dllhandle, IDD_DLGDUMP, NULL, addr DlgDumpProc, NULL
+            .ELSEIF ax==IDC_LISTERROR
+            invoke MessageBox,NULL,addr message_ntdll,addr AppName,MB_OK
             .ENDIF
         .ELSEIF dx==LBN_SELCHANGE ;DBLCLK
             .IF ax==IDC_LISTPLUG
                 invoke GetDlgItem,hWnd,IDC_PLUG
                 invoke SendMessage,eax,BM_SETCHECK,BST_CHECKED,0
             .ELSEIF ax==IDC_LISTERROR
+            invoke MessageBox,NULL,addr message_ntdll,addr AppName,MB_OK
                 invoke GetDlgItem,hWnd,IDC_LISTERROR
                 invoke SendMessage,eax,LB_GETCURSEL,0,0
                 mov index_err,eax

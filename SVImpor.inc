@@ -153,6 +153,7 @@ IDD_DLGVIDE								equ 1003
 SIDEBYSIDE_COMMONCONTROLS                       equ 1 
 
 LIMITEDLL equ 20000000h
+IATBUFFERSIZE equ 80000h
 MAXSIZE equ 260
 PBM_SETRANGE32 equ     (1030)
 NBLIGNE                                         equ 16

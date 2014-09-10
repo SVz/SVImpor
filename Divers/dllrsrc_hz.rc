@@ -1,0 +1,66 @@
+#include "resource.h"
+
+#define IDC_REFRESH                                     3000
+#define IDC_EXIT                                       3001
+#define IDC_MODULE                                       3002
+#define IDC_RVA                                       3003
+#define IDC_API                                       3004
+#define IDC_ADDRESS                                       3005
+#define IDC_VIEW                                      3006
+#define IDC_SEARCH                                       3007
+#define IDC_NEXT                                       3008
+#define IDC_GO                                       3009
+#define IDC_RELOC                                       3010
+#define IDC_LISTAPI                                       3011
+#define IDC_START                                       3012
+#define IDC_END                                       3013
+#define IDC_SAVE                                       3014
+#define IDC_LISTPLUG                                       3015
+#define IDC_PLUG                                       3016
+
+#define IDC_STATIC                                     -1
+1 ICON MOVEABLE PURE LOADONCALL DISCARDABLE "MAINICON.ICO"
+
+101 DIALOG DISCARDABLE 0, 0, 279, 282
+STYLE 0x0004 | DS_CENTER | WS_CAPTION | WS_SYSMENU | WS_VISIBLE | WS_OVERLAPPED | WS_EX_ACCEPTFILES | DS_MODALFRAME | DS_3DLOOK
+EXSTYLE WS_EX_TOOLWINDOW
+CLASS "DLGCLASS"
+CAPTION "AIT rebuilder SV 01/2001"
+//FONT 8, "MS Sans Serif"
+FONT 8, "Lucida Console"
+BEGIN
+    PUSHBUTTON      "Modules",IDC_REFRESH,1,130,36,14,BS_FLAT
+    PUSHBUTTON      "Cancel",IDC_EXIT,243,268,36,14,BS_FLAT
+    CONTROL         "List1",IDC_LISTAPI,"SysListView32",LVS_REPORT | 
+                    | LVS_SHAREIMAGELISTS | LVS_EDITLABELS | WS_CHILD | WS_VISIBLE |
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,0,189,279,76
+    EDITTEXT        IDC_RVA,34,8,36,14,ES_AUTOHSCROLL
+    LTEXT           "Offset",IDC_STATIC,7,11,25,8
+    PUSHBUTTON      "View",IDC_VIEW,75,8,36,14,BS_FLAT
+    EDITTEXT        IDC_API,4,25,272,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Search",IDC_SEARCH,118,8,36,14,BS_FLAT
+    LTEXT           "Address",IDC_STATIC,208,11,28,8
+    EDITTEXT        IDC_ADDRESS,238,8,36,14,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,1,0,277,43
+    PUSHBUTTON      "Next",IDC_NEXT,162,8,36,14,BS_FLAT
+    PUSHBUTTON      "Build IAT",IDC_GO,58,268,42,14,BS_FLAT
+    CONTROL         "List1",IDC_MODULE,"SysListView32",LVS_REPORT | 
+                    | LVS_SHAREIMAGELISTS | LVS_EDITLABELS | WS_CHILD | WS_VISIBLE |
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,0,58,279,69
+    EDITTEXT        IDC_RELOC,118,133,36,14,ES_AUTOHSCROLL
+    LTEXT           "Relocation Base",IDC_STATIC,53,136,61,8
+    GROUPBOX        "",IDC_STATIC,46,125,229,61
+    LTEXT           "API List",IDC_STATIC,3,176,33,8
+    GROUPBOX        "",IDC_STATIC,1,171,37,15
+    LTEXT           "Module List",IDC_STATIC,4,46,44,8
+    GROUPBOX        "",IDC_STATIC,2,41,50,15
+    EDITTEXT        IDC_START,118,150,36,14,ES_AUTOHSCROLL
+    LTEXT           "Start",IDC_STATIC,93,153,21,8
+    EDITTEXT        IDC_END,118,168,36,14,ES_AUTOHSCROLL
+    LTEXT           "End",IDC_STATIC,101,171,13,8
+    PUSHBUTTON      "Save IAT",IDC_SAVE,105,268,42,14,BS_FLAT | WS_DISABLED
+    LISTBOX         IDC_LISTPLUG,203,134,67,48,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Plugin",IDC_PLUG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    163,134,35,12
+END

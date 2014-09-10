@@ -68,11 +68,7 @@ ENDM
       CTXT MACRO quoted_text:VARARG
         EXITM <offset literal(quoted_text)>
       ENDM
-      len MACRO lpString
-        invoke szLen,reparg(lpString)
-        EXITM <eax>
-      ENDM
-
+ 
 .const
 IDC_REFRESH                                     equ 3000
 IDC_EXIT                                        equ 3001

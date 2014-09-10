@@ -15,8 +15,6 @@ Transparency    proto :DWORD,:DWORD
 check_jmp_table	proto :DWORD,:DWORD,:DWORD
 pelock_decrypt  proto :DWORD,:DWORD,:DWORD,:DWORD,:DWORD
 normalize       proto :DWORD,:DWORD
-Module32First PROTO STDCALL :DWORD,:DWORD
-Module32Next PROTO STDCALL :DWORD,:DWORD
 
 include \masm32\include\windows.inc
 include \masm32\include\user32.inc

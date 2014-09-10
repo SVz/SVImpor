@@ -1523,7 +1523,7 @@ fin_calcul:
             invoke GlobalFree,hMemory
         .endif
         
-        invoke GlobalAlloc,GMEM_MOVEABLE or GMEM_ZEROINIT,10000h
+        invoke GlobalAlloc,GMEM_MOVEABLE or GMEM_ZEROINIT,IATBUFFERSIZE
         mov  hMemory,eax
         invoke GlobalLock,hMemory
         mov  pMemory,eax

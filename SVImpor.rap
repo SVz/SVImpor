@@ -54,8 +54,8 @@ Menu=1,1,1,1,0,0,0,0
 
 [Size]
 4=0,0,790,663,3289
-3=0,0,790,663,9608
-1=0,0,1095,895,7499
+3=0,0,790,663,5467
+1=0,0,1095,895,55718
 5=0,0,790,663,5035
 2=0,0,844,663,0
 6=-4,-23,844,663,0
@@ -107,16 +107,16 @@ CompanyName=SVz
 0=
 
 [Find]
-1="messageb"
-2="message"
-3="LISTPLUG"
-4="plugin"
-5="SEHHandler"
-6="seh"
-7="BrowseForFolder"
-8="scan"
-9="szText"
-10="hwndTreeView"
+1="LIMITEDLL"
+2="messageb"
+3="message"
+4="LISTPLUG"
+5="plugin"
+6="SEHHandler"
+7="seh"
+8="BrowseForFolder"
+9="scan"
+10="szText"
 
 [AutoLoad]
 1=1
@@ -157,7 +157,7 @@ MilestoneOnTime=2
 MilestoneOnDate=0
 MilestoneOnDateWhen=1
 MilestoneOnDateStatus=0
-MilestoneOnDateDate=8
+MilestoneOnDateDate=10
 MilestoneOnDateTimeYear=2005
 MilestoneOnDateTimeMonth=11
 MilestoneOnDateTimeDate=21
